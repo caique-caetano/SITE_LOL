@@ -25,7 +25,7 @@ const imgHabilityR = document.querySelector("#imgHabilityR");
 const descHabilityR = document.querySelector("#descHabilityR");
 
 const getChampionsData = async(champion) => {
-    const apiChampionsURL = `http://ddragon.leagueoflegends.com/cdn/13.20.1/data/pt_BR/champion/${champion}.json`
+    const apiChampionsURL = `https://ddragon.leagueoflegends.com/cdn/13.20.1/data/pt_BR/champion/${champion}.json`
 
     const res = await fetch(apiChampionsURL);
     const data = await res.json();
@@ -48,7 +48,7 @@ const showChampionData = async (champion) => {
     }
 
    nameChampion.innerText = data[`${champion}`].id;
-   imgChampions.setAttribute("src", `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion}_0.jpg`)
+   imgChampions.setAttribute("src", `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion}_0.jpg`)
    titleChampions.innerText = data[`${champion}`].title
    
    const imgHabilidades = data[`${champion}`].spells.map(function (e) {
